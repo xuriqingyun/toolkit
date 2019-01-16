@@ -107,7 +107,7 @@ public interface Istatistics {
      * @throws
      **/
     static boolean exits(File file){
-        Objects.nonNull(file);
+        Objects.requireNonNull(file);
         if(!file.exists()){
             throw new BizException(String.format("%s not exits",file.getAbsoluteFile()));
         }
@@ -278,7 +278,7 @@ public interface Istatistics {
      * @throws
      **/
     static String fileType(File file){
-        Objects.nonNull(file);
+        Objects.requireNonNull(file);
         String name = file.getName();
         if(name.lastIndexOf(".")!=-1){
             return name.substring(name.lastIndexOf(".")+1);

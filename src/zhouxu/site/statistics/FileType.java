@@ -57,7 +57,7 @@ public enum  FileType {
      * @throws
      **/
     public static FileType getType(File file){
-        Objects.nonNull(file);
+        Objects.requireNonNull(file);
         FileType[] values = FileType.values();
         for(FileType fileType:FileType.values()){
             if(fileType.getCode().equals(Istatistics.fileType(file))){
